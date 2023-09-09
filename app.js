@@ -60,7 +60,7 @@ app.get("/square", (req, res) => {
 
 
 // ------------- Health Calculators------------
-app.get("/health-calculator", (req, res) => {
+app.get("/health-calculator ", (req, res) => {
     res.render('health_and_fitness_Calc/health_cal')
 })
 app.get("/bmr", (req, res) => {
