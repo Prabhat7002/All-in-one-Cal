@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All-in-1 Calculator</title>
+    <!-- Bootstrap Font Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+
+    <!-----bootstrap and css import-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/5c2baa997c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="geometric-calculators/geometric.css">
+    
+
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+    <%- include('../partials/gemoetry-calc-list') %>
+
+
+
+<!------------------------ cone ---------------------------->
+<div id="Cone" class="calc">
+    <h3>Cone Calculator</h3>
+    <div class="cont">
+        <div class="inputs">
+            <label for="given_data_Cone">Choose a calculation:</label>
+            <br>
+            <select id="given_data_cone" class="input-bar" onchange="setInputCone()">
+                <option value="rh" selected>Find s, V, L, A | Given r, h </option>
+                <option value="rs">Find h, V, L, A | Given r, s </option>
+                <option value="rV">Find h, s, L, A | Given r, V </option>
+                <option value="rL">Find h, s, V, A | Given r, L </option>
+                <option value="rA">Find h, s, V, L | Given r, A </option>
+                <option value="hs">Find r, V, L, A | Given h, s </option>
+                <option value="hV">Find r, s, L, A | Given h, V </option>
+                <option value="sL">Find r, h, V, A | Given s, L </option>
+            </select>
+
+
+            <div id="cone-input-rh">
+                <label for="r">radius r = </label>
+                <input name="r" class="input-bar radius-cone" type="text" title="positive real number"
+                    placeholder="Length of radius" />
+                <br>
+                <label for="h">height h = </label>
+                <input name="h" class="input-bar height-cone" type="text" title="positive real number"
+                    placeholder="Length of height" />
+            </div>
+
+
+            <div id="cone-input-rs">
+                <label for="r">radius r = </label>
+                <input name="r" class="input-bar radius-cone" type="text" title="positive real number"
+                    placeholder="Length of radius" />
+                <br>
+                <label for="s">slant height s = </label>
+                <input name="s" class="input-bar slant-cone" type="text" title="positive real number"
+                    placeholder="Length of slant height" />
+            </div>
+
+
+            <div id="cone-input-rV">
+                <label for="r">radius r = </label>
+                <input name="r" class="input-bar radius-cone" type="text" title="positive real number"
+                    placeholder="Length of radius" />
+                <br>
+                <label for="V">volume V = </label>
+                <input name="V" class="input-bar volume-cone" type="text" title="positive real number"
+                    placeholder="enter volume" />
+            </div>
+
+            <div id="cone-input-rL">
+                <label for="r">radius r = </label>
+                <input name="r" class="input-bar radius-cone" type="text" title="positive real number"
+                    placeholder="Length of radius" />
+                <br>
+                <label for="L">curved area L = </label>
+                <input name="L" class="input-bar lateral-cone" type="text" title="positive real number"
+                    placeholder="curved surface area" />
+            </div>
+
+            <div id="cone-input-rA">
+                <label for="r">radius r = </label>
+                <input name="r" class="input-bar radius-cone" type="text" title="positive real number"
+                    placeholder="Length of radius" />
+                <br>
+                <label for="A">Total area A = </label>
+                <input name="A" class="input-bar totalarea-cone" type="text" title="positive real number"
+                    placeholder="enter volume" />
+            </div>
+
+            <div id="cone-input-hs">
+                <label for="h">height h = </label>
+                <input name="h" class="input-bar height-cone" type="text" title="positive real number"
+                    placeholder="Length of height" />
+                <br>
+                <label for="s">slant height s = </label>
+                <input name="s" class="input-bar slant-cone" type="text" title="positive real number"
+                    placeholder="Length of slant height" />
+            </div>
+
+            <div id="cone-input-hV">
+                <label for="h">height h = </label>
+                <input name="h" class="input-bar height-cone" type="text" title="positive real number"
+                    placeholder="Length of height" />
+                <br>
+                <label for="V">volume V = </label>
+                <input name="V" class="input-bar volume-cone" type="text" title="positive real number"
+                    placeholder="enter volume" />
+            </div>
+
+            <div id="cone-input-sL">
+                <label for="s">slant height s = </label>
+                <input name="s" class="input-bar slant-cone" type="text" title="positive real number"
+                    placeholder="Length of slant height" />
+                <br>
+                <label for="L">curved area L = </label>
+                <input name="L" class="input-bar lateral-cone" type="text" title="positive real number"
+                    placeholder="curved surface area" />
+            </div>
+
+
+            <div class="input-for-units-cone">
+                <label for="units_length">Units</label>
+                <select name="units" id="unitsCone">
+                    <option value="km">km</option>
+                    <option value="m" selected>m</option>
+                    <option value="cm">cm</option>
+                    <option value="mm">mm</option>
+                    <option value="mi">mi</option>
+                    <option value="yd">yd</option>
+                    <option value="ft">ft</option>
+                    <option value="in">in</option>
+                </select>
+
+                <div class="buttons">
+                    <button id="resetCone" class="btn btn-outline-dark">Reset</button>
+                    <button id="submitCone" class="btn btn-outline-dark">Calculate</button>
+                </div>
+
+            </div>
+        </div>
+        <div class="display">
+            Answer:
+            <div id="answerCone"></div>
+        </div>
+    </div>
+</div>
+</div>
+
+<%- include('../partials/footer') %>
+
+</body>
+<script src="main.js"></script>
+<script src="geometric-calculators/cone.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
+
+</html>

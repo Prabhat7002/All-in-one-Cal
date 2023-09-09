@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math and Algebra</title>
+    <!-- Bootstrap Font Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+
+    <!-----bootstrap and css import-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/5c2baa997c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="math_and_algebra_Calc/Algebrastyles.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <%- include('../partials/header') %>
+
+    <h2>Math and Algebra Calculator</h2>
+
+    <div class="calc-list-wrapper">
+        <div class="calculators-list scrollbar-thin">
+            <div class="calc-list-option">
+                <button class="btn btn-outline-dark algebraCalcOption" value="complex-number-calculator">Complex Number Calculator</button>
+                <button class="btn btn-outline-dark algebraCalcOption" value="boolean-algebra-simplifier">Boolean Algebra Simplifier</button>
+                <button class="btn btn-outline-dark algebraCalcOption" value="partial-fraction-decomposer">Partial Fraction Decomposer</button>
+                <button class="btn btn-outline-dark algebraCalcOption" value="inequality-calculator">Inequality Calculator</button>
+                <button class="btn btn-outline-dark algebraCalcOption" value="flow-rate-calculator">Flow RateCalculator</button>
+                <button class="btn btn-outline-dark algebraCalcOption" value="impulse-calculator">Impulse Calculator</button>
+                <button class="btn btn-outline-dark algebraCalcOption" value="factorization-calculator">Factorization Calculator</button>
+                <button class="btn btn-outline-dark algebraCalcOption" value="percentage-calculator">Percentage Calculator</button>
+                <button class="btn btn-outline-dark algebraCalcOption" value="exponential-formula-calculator">Exponential Formula Calculator</button>
+                <button class="btn btn-outline-dark algebraCalcOption" value="cube-num-calculator">Cube Number Calculator</button>
+                <button class="btn btn-outline-dark algebraCalcOption" value="cube-root-calculator">Cube Root Calculator</button>
+                <button class="btn btn-outline-dark algebraCalcOption" value="math-formulas-calculator">Math Formulas Calculator</button>
+                <button class="btn btn-outline-dark algebraCalcOption" value="math-calculator">Math Calculator</button>
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="cal-window">
+
+        <div id="complex-number-calculator" class="calc-visibility visible">
+            <div class="calc">
+                <div class="calc-main">
+                    <div class="cont">
+                        <div class="inputs">
+                            <label for="real1">Real part of Number 1:</label>
+                            <input type="number" id="real1" class="input-bar">
+                            <label for="imaginary1">Imaginary part of Number 1:</label>
+                            <input type="number" id="imaginary1" class="input-bar">
+                            <label for="real2">Real part of Number 2:</label>
+                            <input type="number" id="real2" class="input-bar">
+                            <label for="imaginary2">Imaginary part of Number 2:</label>
+                            <input type="number" id="imaginary2" class="input-bar">
+
+                            <div class="buttons">
+                                <button class="btn btn-outline-primary" onclick="add()">Add</button>
+                                <button class="btn btn-outline-primary" onclick="subtract()">Subtract</button>
+                                <button class="btn btn-outline-primary" onclick="multiply()">Multiply</button>
+                                <button class="btn btn-outline-primary" onclick="divide()">Divide</button>
+                            </div>
+                        </div>
+                        <div class="display">
+                            Answer:
+                            <div id="result13"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="algebra-calc-info">
+                    <h2>Complex Number Calculator</h2>
+                    <h3> Addition</h3>
+                    Very simple, add up the real parts (without i) and add up the imaginary parts (with i): This is
+                    equal to
+                    use rule: (a+bi)+(c+di) = (a+c) + (b+d)i
+                    <h3>Subtraction</h3>
+                    Again very simple, subtract the real parts and subtract the imaginary parts (with i): This is equal
+                    to
+                    use rule: (a+bi)+(c+di) = (a-c) + (b-d)i
+                    <h3>Multiplication</h3>To multiply two complex numbers, use distributive law, avoid binomials, and
+                    apply
+                    i2 = -1. This is equal to use rule: (a+bi)(c+di) = (ac-bd) + (ad+bc)i
+                    <h3>Division</h3> If the denominator is c+di, to make it without i (or make it real), multiply with
+                    conjugate c-di:
+                </div>
+            </div>
+        </div>
+
+        <div id="boolean-algebra-simplifier" class="calc-visibility">
+            <div class="calc">
+                <div class="calc-main">
+                    <div class="cont">
+                        <div class="inputs">
+                            <label for="booleanEXP">Enter the boolean expression:</label>
+                            <input type="text" id="booleanEXP" class="input-bar">
+                            <div class="buttons">
+                                
+                                <button onclick="simplify()" class='btn btn-outline-primary'>Simplify</button>
+                            </div>
+                        </div>
+                        <div class="display">
+                            Answer:
+                            <div id="result1"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="algebra-calc-info">
+                    <h2>Boolean Algebra Simplifier</h2>
+                    <p>Boolean Algebra Simplification and how to simplify Boolean algebra expressions using some basic
+                        rules
+                        applied to their variables, literals and terms</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="partial-fraction-decomposer" class="calc-visibility">
+            <div class="calc">
+                <div class="calc-main">
+                    <div class="cont">
+                        <div class="inputs">
+                            <input type="text" id="partialFractionExp" class="input-bar" placeholder="Enter rational function">
+
+                            <div class="buttons">
+                                <button class="btn btn-outline-primary" onclick="decompose()">Decompose</button>
+                            </div>
+                        </div>
+                        <div class="display">
+                            Answer:
+                            <div id="result2"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="algebra-calc-info">
+                    <h2>Partial Fraction Decomposer</h2>
+                    <p>In algebra, the partial fraction decomposition or partial fraction expansion of a rational
+                        fraction
+                        (that is, a fraction such that the numerator and the denominator are both polynomials) is an
+                        operation
+                        that consists of expressing the fraction as a sum
+                        of a polynomial (possibly zero) and one or several fractions with a simpler denominator.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="inequality-calculator" class="calc-visibility">
+            <div class="calc">
+                <div class="calc-main">
+                    <div class="cont">
+                        <div class="inputs">
+                            <input type="number" id="num1" class="input-bar" placeholder="Enter number 1">
+                            <select id="operator">
+                                <option value="+">Add</option>
+                                <option value="-">Substract</option>
+                                <option value="*">Multiply</option>
+                                <option value="/">Divide</option>
+                            </select>
+                            <input type="number" id="num2" class="input-bar" placeholder="Enter number 2">
+
+                            <div class="buttons">
+                                <button onclick="Inequalitycalculate()"
+                                    class='btn btn-outline-primary'>Calculate</button>
+                            </div>
+                        </div>
+                        <div class="display">
+                            Answer:
+                            <div id="result3"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="algebra-calc-info">
+                    <h2>Inequality Calculator</h2>
+                    <p>How to solve your inequality To solve your inequality using the Inequality Calculator, type in
+                        your
+                        inequality like x+7>9. The inequality solver will then show you the steps to help you learn how
+                        to solve
+                        it on your own.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="flow-rate-calculator" class="calc-visibility">
+            <div class="calc">
+                <div class="calc-main">
+                    <div class="cont">
+                        <div class="inputs">
+                            <label for="area">Area (m²):</label>
+                            <input type="number" id="area" class="input-bar" step="any">
+                            <label for="velocity">Velocity (m/s):</label>
+                            <input type="number" id="velocity" class="input-bar" step="any">
+
+                            <div class="buttons">
+                                <button onclick="calculateFlowRate()" class='btn btn-outline-primary'>Calculate</button>
+                            </div>
+                        </div>
+                        <div class="display">
+                            Answer:
+                            <div id="result4"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="algebra-calc-info">
+                    <h2>Flow Rate Calculator</h2>
+                    <p>Q= v A Q = volumetric flow rate v = flow velocity v A = cross-sectional vector area</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="impulse-calculator" class="calc-visibility">
+            <div class="calc">
+                <div class="calc-main">
+                    <div class="cont">
+                        <div class="inputs">
+                            <label for="force">Force (N):</label>
+                            <input type="number" id="force" class='input-bar'>
+                            <label for="time">Time (s):</label>
+                            <input type="number" id="time" class='input-bar'>
+
+                            <div class="buttons">
+                                <button onclick="calculateImpulse()" class='btn btn-outline-primary'>Calculate</button>
+                            </div>
+                        </div>
+                        <div class="display">
+                            Answer:
+                            <div id="result5"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="algebra-calc-info">
+                    <h2>Impulse Calculator</h2>
+                    <p>Impulse-Momentum Calculator finds impulse, force, time, mass, change in velocity, initial or
+                        final
+                        velocity with the equation F Δt = m Δv.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="factorization-calculator" class="calc-visibility">
+            <div class="calc">
+                <div class="calc-main">
+                    <div class="cont">
+                        <div class="inputs">
+                            <label for="number">Number:</label>
+                            <input type="number" id="FactorizationNum" class="input-bar">
+
+                            <div class="buttons">
+                                <button onclick="factorize()" class='btn btn-outline-primary'>Factorize</button>
+                            </div>
+                        </div>
+                        <div class="display">
+                            Answer:
+                            <div id="result6"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="algebra-calc-info">
+                    <h2>Factorization Calculator</h2>
+                    <p>The Factoring Calculator transforms complex expressions into a product of simpler factors. It can
+                        factor
+                        expressions with polynomials involving any number of vaiables as well as more complex functions.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="percentage-calculator" class="calc-visibility">
+            <div class="calc">
+                <div class="calc-main">
+                    <div class="cont">
+                        <div class="inputs">
+                            <label for="number">Number:</label>
+                            <input type="number" id="percentNum" class="input-bar">
+                            <label for="percentage">Percentage:</label>
+                            <input type="number" id="percentage" class="input-bar">
+
+                            <div class="buttons">
+                                <button onclick="calculatePercentage()"
+                                    class='btn btn-outline-primary'>Calculate</button>
+
+                            </div>
+                        </div>
+                        <div class="display">
+                            Answer:
+                            <div id="result7"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="algebra-calc-info">
+                    <h2>Percentage Calculator</h2>
+                    <p> What is a percentage? In mathematics, a percentage is a number or ratio that represents a
+                        fraction of
+                        100. It is one of the ways to represent a dimensionless relationship between two numbers; other
+                        methods
+                        include ratios, fractions, and decimals. Percentages
+                        are often denoted by the symbol "%" written after the number. They can also be denoted by
+                        writing
+                        "percent" or "pct" after the number. For example, 35% is equivalent to the decimal 0.35, or the
+                        fractions .
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="exponential-formula-calculator" class="calc-visibility">
+            <div class="calc">
+                <div class="calc-main">
+                    <div class="cont">
+                        <div class="inputs">
+                            <label for="base">Base:</label>
+                            <input type="number" id="base" class="input-bar">
+                            <label for="exponent">Exponent:</label>
+                            <input type="number" id="exponent" class="input-bar">
+
+                            <div class="buttons">
+                                <button onclick="calculateExponential()"
+                                    class='btn btn-outline-primary'>Calculate</button>
+
+                            </div>
+                        </div>
+                        <div class="display">
+                            Answer:
+                            <div id="result8"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="algebra-calc-info">
+                    <h2>Exponential Formula Calculator</h2>
+                    <p>This free exponent calculator determines the result of exponentiation, including expressions that
+                        use
+                        the irrational number e as a base.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="cube-num-calculator" class="calc-visibility">
+            <div class="calc">
+                <div class="calc-main">
+                    <div class="cont">
+                        <div class="inputs">
+                            <label for="sideLength">Side Length (units):</label>
+                            <input type="number" id="sideLength" class="input-bar">
+
+                            <div class="buttons">
+                                <button onclick="calculateCube()" class='btn btn-outline-primary'>Calculate</button>
+
+                            </div>
+                        </div>
+                        <div class="display">
+                            Answer:
+                            <div id="result9">
+                                <p>Volume: <span id="volumeResult">-</span> cubic units</p>
+                                <p>Surface Area: <span id="surfaceAreaResult">-</span> square units</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="algebra-calc-info">
+                    <h2>Cube number Calculator</h2>
+                    <p>Cube calculator calculates surface area, side length, diagonal length, and volume with any one
+                        known
+                        variable.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="cube-root-calculator" class="calc-visibility">
+            <div class="calc">
+                <div class="calc-main">
+                    <div class="cont">
+                        <div class="inputs">
+                            <label for="inputNumber">Number:</label>
+                            <input type="number" id="inputNumberCubeRoot" class="input-bar">
+
+                            <div class="buttons">
+                                <button onclick="calculateCubeRoot()" class='btn btn-outline-primary'>Calculate</button>
+
+                            </div>
+                        </div>
+                        <div class="display">
+                            Answer:
+                            <div id="result10"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="algebra-calc-info">
+                    <h2>Cube Root Calculator</h2>
+                    <p>Use this calculator to find the cube root of positive or negative numbers. Given a number x, the
+                        cube
+                        root of x is a number a such that a3 = x.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="math-formulas-calculator" class="calc-visibility">
+            <div class="calc">
+                <div class="calc-main">
+                    <div class="cont">
+                        <div class="inputs">
+                            <label for="number">Number:</label>
+                            <input type="number" id="number11" class="input-bar">
+
+                            <div class="buttons">
+                                <button onclick="calculateSquareRoot()" class='btn btn-outline-primary'>Calculate Square
+                                    Root</button>
+                                <button onclick="calculateSumOfSquares()" class='btn btn-outline-primary'>Calculate Sum
+                                    of Squares</button>
+                            </div>
+                        </div>
+                        <div class="display">
+                            Answer:
+                            <div id="result11"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="algebra-calc-info">
+                    <h2>Math Formulas Calculator</h2>
+                    <p> Equation you want to solve into the editor. The equation calculator allows you to take a simple
+                        or
+                        complex equation and solve by best method possible.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="math-calculator" class="calc-visibility">
+            <div class="calc">
+                <div class="calc-main">
+                    <div class="cont">
+                        <div class="inputs">
+                            <label for="expression">Expression:</label>
+                            <input type="text" id="mathExp">
+
+                            <div class="buttons">
+                                <button onclick="calculateMath()" class='btn btn-outline-primary'>Calculate</button>
+                            </div>
+                        </div>
+                        <div class="display">
+                            Answer:
+                            <div id="result12"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="algebra-calc-info">
+                    <h2>Math Calculator</h2>
+                    <p> Math Calculator from Mathway will evaluate various math problems from basic arithmetic to
+                        advanced
+                        trigonometric expressions.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <%- include('../partials/footer') %>
+    
+
+
+</body>
+<script src="math_and_algebra_Calc/Algebrascript.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+</html>

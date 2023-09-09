@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All-in-1 Calculator</title>
+    <!-- Bootstrap Font Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+
+    <!-----bootstrap and css import-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/5c2baa997c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="geometric-calculators/geometric.css">
+    
+
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+    <%- include('../partials/gemoetry-calc-list') %>
+
+
+
+<!----------------------- Cylinder ----------------------->
+
+<div id="Cylinder" class="calc">
+    <h3>Cylinder Calculator</h3>
+    <div class="cont">
+        <div class="inputs">
+            <label for="given_data_cyl">Choose a calculation:</label>
+            <br>
+            <select id="given_data_cyl" class="input-bar" onchange="setInputCyl()">
+                <option value="rh" selected>Find V, L, A | Given r, h </option>
+                <option value="rV">Find h, L, A | Given r, V </option>
+                <option value="rL">Find h, V, A | Given r, L </option>
+                <option value="hV">Find r, L, A | Given h, V </option>
+                <option value="hL">Find r, V, A | Given h, L </option>
+                
+            </select>
+
+
+            <div id="input-for-rh">
+                <label for="r">radius r = </label>
+                <input name="r" class="input-bar radius-cyl" type="text" title="positive real number"
+                    placeholder="Length of radius" />
+                <br>
+                <label for="h">height h = </label>
+                <input name="h" class="input-bar height-cyl" type="text" title="positive real number"
+                    placeholder="Length of height" />
+            </div>
+
+            
+            <div id="input-for-rV">
+                <label for="r">radius r = </label>
+                <input name="r" class="input-bar radius-cyl" type="text" title="positive real number"
+                    placeholder="Length of radius" />
+                <br>
+                <label for="V">volume V = </label>
+                <input name="V" class="input-bar volume-cyl" type="text" title="positive real number"
+                    placeholder="enter volume" />
+            </div>
+
+            
+            <div id="input-for-rL">
+                <label for="r">radius r = </label>
+                <input name="r" class="input-bar radius-cyl" type="text" title="positive real number"
+                    placeholder="Length of radius" />
+                <br>
+                <label for="L">curved area L = </label>
+                <input name="L" class="input-bar lateral-cyl" type="text" title="positive real number"
+                    placeholder="curved surface area" />
+            </div>
+
+            <div id="input-for-hV">
+                <label for="h">height h = </label>
+                <input name="h" class="input-bar height-cyl" type="text" title="positive real number"
+                    placeholder="Length of height" />
+                <br>
+                <label for="V">volume V = </label>
+                <input name="V" class="input-bar volume-cyl" type="text" title="positive real number"
+                    placeholder="enter volume" />
+            </div>
+            
+            <div id="input-for-hL">
+                <label for="h">height h = </label>
+                <input name="h" class="input-bar height-cyl" type="text" title="positive real number"
+                    placeholder="Length of height" />
+                <br>
+                <label for="L">curved area L = </label>
+                <input name="L" class="input-bar lateral-cyl" type="text" title="positive real number"
+                    placeholder="curved surface area" />
+            </div>
+
+
+            <div class="input-for-units-cyl">
+                <label for="units_length">Units</label>
+                <select name="units" id="unitsCyl">
+                    <option value="km">km</option>
+                    <option value="m" selected>m</option>
+                    <option value="cm">cm</option>
+                    <option value="mm">mm</option>
+                    <option value="mi">mi</option>
+                    <option value="yd">yd</option>
+                    <option value="ft">ft</option>
+                    <option value="in">in</option>
+                </select>
+
+                <div class="buttons">
+                    <button id="resetCyl" class="btn btn-outline-dark">Reset</button>
+                    <button id="submitCyl" class="btn btn-outline-dark">Calculate</button>
+                </div>
+
+            </div>
+        </div>
+        <div class="display">
+            Answer:
+            <div id="answerCyl"></div>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer') %>
+
+</body>
+<script src="main.js"></script>
+<script src="geometric-calculators/cylinder.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
+
+</html>

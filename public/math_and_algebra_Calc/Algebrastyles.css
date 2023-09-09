@@ -1,0 +1,194 @@
+:root {
+    --color-primary: #614BC3;
+    --color-secondary:#33BBC5;
+    --color-heading:#85E6C5;
+    --color-text: #C8FFE0;
+  }
+
+body{
+    background-color: var(--color-primary);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.calc-list-wrapper{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculators-list {
+    /* padding: .5rem 1.6rem .5rem 1.7rem; */
+    border: 2px solid var(--color-heading);
+    border-radius: 5px;
+    background-color: #eee;
+    background-color: var(--color-heading);
+    /* margin-bottom: .5rem; */
+}
+    
+
+.calc-list-option {
+    overflow: auto;
+    display: flex;
+}
+
+.scrollbar-thin {
+    overflow: auto;
+    scrollbar-width: thin;
+    background-color: var(--color-heading);
+    scrollbar-color: var(--color-primary);
+}
+
+::-webkit-scrollbar {
+    width: 10px; /* Width of the vertical scrollbar */
+    height: 10px; /* Height of the horizontal scrollbar */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--color-secondary); /* Color of the scrollbar thumb */
+    border-radius: 2px; /* Border radius of the thumb */
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: white; /* Color of the scrollbar thumb on hover */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: #f5f5f5; /* Color of the scrollbar track */
+  }
+  
+  ::-webkit-scrollbar-track:hover {
+    background-color: #eee; /* Color of the scrollbar track on hover */
+  }
+
+    
+
+.calculators-list button {
+    display: block;
+    height: fit-content;
+    width: fit-content;
+    white-space: nowrap;
+    font-weight: 500;
+    padding: 7px 10px;
+    margin: 1rem;
+    border-radius: 15px;
+    border-color: var(--color-heading);
+    color: var(--color-primary);
+}
+
+.calculators-list button:hover{
+    border-color: var(--color-secondary);
+    background-color: var(--color-secondary);
+}
+
+
+h2{
+    margin: 20px 0;
+    text-align: center;
+    color: var(--color-heading);
+}
+
+h3{
+    margin: 20px 0;
+    text-align: center;
+    color: var(--color-primary);
+}
+
+.cal-window{
+    background-color: var(--color-secondary);
+    padding-bottom: 10rem;
+}
+
+
+.calc {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-secondary);
+}
+
+.calc-visibility{
+    display: none;
+}
+.visible{
+    display: block;
+}
+.cont {
+    width: 500px;
+    height: auto;
+    margin: 50px;
+    border-radius: 5px;
+    padding: 10px;
+    /* border: 2px solid #777;
+    background-color: #eee; */
+    display: grid;
+    grid-template-rows: max-content;
+    box-shadow: 5px 5px 10px #777;
+    background-color: var(--color-heading);
+}
+
+.inputs {
+    text-align: center;
+}
+
+.inputs input {
+    display: block;
+    margin: 0 auto 20px auto;
+}
+
+.inputs label {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.input-bar {
+    width: 250px;
+    height: 35px;
+    margin: 5px;
+    padding: 2px;
+    border-radius: 5px;
+    border: 1px solid #888;
+}
+
+.buttons {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.display {
+    padding: 10px;
+    margin: 10px auto;
+    border: 2px solid #ccc;
+    background-color: #fff;
+    border-radius: 5px;
+    width: 100%;
+}
+
+
+
+.algebra-calc-info {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 50px;
+    width: 500px;
+    height: 300px;
+    overflow-y: auto;
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .cal-window{
+        padding-bottom: 38rem;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px){
+    .cal-window{
+        padding-bottom: 38rem;
+    }
+}

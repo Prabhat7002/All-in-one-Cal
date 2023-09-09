@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Health Calculator</title>
+  <!-- Bootstrap Font Icon CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+
+  <!-----bootstrap and css import-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/5c2baa997c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/health-and-fitness-calculator/health.css">
+
+
+<body>
+
+  <%- include('../partials/header') %>
+
+  <%- include('../partials/health-calc-list') %>
+    <!--Ideal Body weight Calculator-->
+    <div class="row justify-content-center align-items-center g-2 status_grid">
+      <h2 class="heading"><span>I</span>deal <span>B</span>ody <span>W</span>eight</h2>
+
+      <div class="col-lg-4 col-md-6 col-sm-12 status_grid">
+        <h3>What is Ideal Body Weight ?</h3>
+        <p>
+          Most everyone has at some point tried to lose weight, or at least known somebody who has. This is largely due
+          to the perception of an "ideal" body weight, which is often based on what we see promoted through various
+          media such as social media, TV, movies, magazines, etc. Although ideal body weight (IBW) today is sometimes
+          based on perceived visual appeal, IBW was actually introduced to estimate dosages for medical use, and the
+          formulas that calculate it are not at all related to how a person looks at a given weight. It has since been
+          determined that the metabolism of certain drugs is more based on IBW than it is total body weight. Today, IBW
+          is also used widely throughout sports, since many sports classify people based on their body weight.
+        </p>
+        <p>
+          Note that IBW is not a perfect measurement. It does not consider the percentages of body fat and muscle in a
+          person's body. This means that it is possible for highly fit, healthy athletes to be considered overweight
+          based on their IBW. This is why IBW should be considered with the perspective that it is an imperfect measure
+          and not necessarily indicative of health, or a weight that a person should necessarily strive toward; it is
+          possible to be over or under your "IBW" and be perfectly healthy.
+        </p>
+        <p>
+          How much a person should weigh is not an exact science. It is highly dependent on each individual. Thus far,
+          there is no measure, be it IBW, body mass index (BMI), or any other that can definitively state how much a
+          person should weigh to be healthy. They are only references, and it's more important to adhere to making
+          healthy life choices such as regular exercise, eating a variety of unprocessed foods, getting enough sleep,
+          etc. than it is to chase a specific weight based on a generalized formula.
+
+          That being said, many factors can affect the ideal weight; the major factors are listed below. Other factors
+          include health conditions, fat distribution, progeny, etc.
+        </p>
+        <a href="https://en.wikipedia.org/wiki/Human_body_weight">Read More.....</a>
+      </div>
+
+      <div class="col-lg-4 col-md-6 col-sm-12 status_grid">
+        <h3 class="center">Calculator</h3>
+        <form class="center">
+          <div class="row justify-content-center align-items-center g-2 ">
+
+            <div class="row-lg-3 row-md-4 row-sm-6">
+              <label class="form-label" for="age">Age: &nbsp; &nbsp;</label>
+              <input class="" id="age" type="number" name="age" placeholder="Enter Age">
+            </div>
+
+            <div class="row-lg-3 row-md-4 row-sm-6">
+              <label for="height" class="form-label">Height:</label>
+              <input id="height" type="number" name="height" min="152" placeholder=">152(in cm)">
+            </div>
+
+            <div class="row-lg-3 row-md-4 row-sm-6">
+              <label class="form-label" for="gender">Gender: &nbsp&nbsp</label>
+              <select id="gender">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+
+            <div class="row-lg-3 row-md-4 row-sm-6 cal_btn">
+              <button id="submit" class="btn btn-primary" type="submit" name="submit">Calculate Ideal Weight</button>
+            </div>
+
+          </div>
+        </form>
+      </div>
+
+      <div class="col-lg-3 col-md-4 col-sm-6 center status_grid status_margin">
+        <!-- <h3 class="center">Results</h3> -->
+        <!-- <div> -->
+        <h3>The ideal weight based on popular formulas:</h3>
+        <table>
+          <tr>
+            <th>Formula</th>
+            <th>Ideal Weight</th>
+          </tr>
+          <tr>
+            <td>Robinson (1983)</td>
+            <td id="robinson"></td>
+          </tr>
+          <tr>
+            <td>Miller (1983)</td>
+            <td id="miller"></td>
+          </tr>
+          <tr>
+            <td>Devine (1974)</td>
+            <td id="devine"></td>
+          </tr>
+          <tr>
+            <td>Hamwi (1964)</td>
+            <td id="hamwi"></td>
+          </tr>
+          <tr>
+            <td>Healthy BMI Range</td>
+            <td id="health_bmi_range">59.9 - 81.0 kgs</td>
+          </tr>
+        </table>
+
+        <!-- </div> -->
+
+      </div>
+
+      <%- include('../partials/footer') %>
+
+        <script src="health-and-fitness-calculator/idealWeight.js" charset="UTF-8"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+          integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+          crossorigin="anonymous"></script>
+
+</body>
+
+</html>

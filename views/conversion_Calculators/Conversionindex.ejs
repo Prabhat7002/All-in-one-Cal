@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversion Calculator</title>
+    <!-- Bootstrap Font Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+
+    <!-----bootstrap and css import-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" 
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/5c2baa997c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="conversion_Calculators/Conversionstyles.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <%- include('../partials/header') %>
+        <h2>Conversion Calculators</h2>
+
+        <div class="calc-list-wrapper">
+            <div class="calculators-list scrollbar-thin">
+                <div class="calc-list-option">
+                    <button class="btn btn-outline-dark conversionCalcOption"
+                        value="length-conversion-calculator">Length
+                        Conversion Calculator</button>
+                    <button class="btn btn-outline-dark conversionCalcOption" value="age-calculator">Age
+                        Calculator</button>
+                    <button class="btn btn-outline-dark conversionCalcOption" value="time-conversion-calculator">Time
+                        Conversion Calculator</button>
+                    <button class="btn btn-outline-dark conversionCalcOption" value="date-conversion-calculator">Date
+                        Conversion Calculator</button>
+                    <button class="btn btn-outline-dark conversionCalcOption" value="GPA-calculator">GPA
+                        Calculator</button>
+                    <button class="btn btn-outline-dark conversionCalcOption" value="height-calculator">Height
+                        Calculator</button>
+                    <button class="btn btn-outline-dark conversionCalcOption"
+                        value="password-generator-calculator">Password
+                        Generator</button>
+                    <button class="btn btn-outline-dark conversionCalcOption" value="bill-tip-calculator">Bill and Tip
+                        Calculator</button>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="cal-window">
+            <div id="length-conversion-calculator" class="calc-visibility visible">
+                <div class="calc">
+                    <div class="calc-main">
+                        <div class="cont">
+                            <div class="inputs">
+                                <label for="inputValue">Enter Length:</label>
+                                <input type="number" id="inputValue" class="input-bar" placeholder="Enter length"
+                                    class="lengthinput">
+
+                                <label for="fromUnit">From:</label>
+                                <select id="fromUnit">
+                                    <option value="inches">Inches</option>
+                                    <option value="centimeters">Centimeters</option>
+                                    <option value="feet">Feet</option>
+                                    <option value="meters">Meters</option>
+                                </select>
+
+                                <label for="toUnit">To:</label>
+                                <select id="toUnit">
+                                    <option value="inches">Inches</option>
+                                    <option value="centimeters">Centimeters</option>
+                                    <option value="feet">Feet</option>
+                                    <option value="meters">Meters</option>
+                                </select>
+
+                                <div class="buttons">
+                                    <button id="reset-length" class="btn btn-outline-dark">Reset</button>
+                                    <button id="calculate-length" class="btn btn-outline-dark">Convert</button>
+                                </div>
+                            </div>
+                            <div class="display">
+                                Answer:
+                                <div id="result-length"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="conversion-calc-info">
+                        <h3>Length Conversion Calculator</h3>
+                        <p>This length conversion calculator works by typing units (up to 11 in the same calculation)
+                            into
+                            the
+                            tool.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="age-calculator" class="calc-visibility">
+                <div class="calc">
+                    <div class="calc-main">
+                        <div class="cont">
+                            <div class="inputs">
+                                <label for="birthdate">Enter Your Birthdate:</label>
+                                <input type="date" id="birthdate" class="input-bar" required>
+
+                                <div class="buttons">
+                                    <button id="reset-age" class="btn btn-outline-dark">Reset</button>
+                                    <button id="calculate-age" class="btn btn-outline-dark">Calculate</button>
+                                </div>
+                            </div>
+                            <div class="display">
+                                Answer:
+                                <div id="result-age"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="conversion-calc-info">
+                        <h3>Age Calculator</h3>
+                        <p>Age Calculator: calculate your age online today from date of birth. Find how old you are in
+                            years,
+                            months, weeks and days online.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="time-conversion-calculator" class="calc-visibility">
+                <div class="calc">
+                    <div class="calc-main">
+                        <div class="cont">
+                            <div class="inputs">
+                                <label for="hours">Enter hours:</label>
+                                <input type="number" id="hours-time" class="input-bar">
+
+                                <div class="buttons">
+                                    <button id="reset-time" class="btn btn-outline-dark">Reset</button>
+                                    <button id="calculate-time" class="btn btn-outline-dark">Convert</button>
+                                </div>
+                            </div>
+                            <div class="display">
+                                Answer:
+                                <div id="result-time"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="conversion-calc-info">
+                        <h3>Time Conversion Calculator</h3>
+                        <p>This Time Zone Converter (Classic) calculates the time difference between several locations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="date-conversion-calculator" class="calc-visibility">
+                <div class="calc">
+                    <div class="calc-main">
+                        <div class="cont">
+                            <div class="inputs">
+                                <label for="days">Days:</label>
+                                <input type="number" id="days-date" class="input-bar">
+
+                                <div class="buttons">
+                                    <button id="reset-date" class="btn btn-outline-dark">Reset</button>
+                                    <button class="btn btn-outline-dark" onclick="convertDate()">Convert</button>
+                                </div>
+                            </div>
+                            <div class="display">
+                                Answer:
+                                <div id="result-date"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="conversion-calc-info">
+                        <h3>Date Conversion Calculator</h3>
+                        <p>The Duration Calculator calculates the number of days, months and years between two dates.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="GPA-calculator" class="calc-visibility">
+                <div class="calc">
+                    <div class="calc-main">
+                        <div class="cont">
+                            <div class="inputs">
+                                <label for="courses">Number of Courses:</label>
+                                <input type="number" id="courses-gpa" class="input-bar" min="1" max="10">
+                                <div id="courseInputs-gpa"></div>
+
+                                <div class="buttons">
+                                    <button id="reset-GPA" class="btn btn-outline-dark">Reset</button>
+                                    <button id="calculate-GPA" class="btn btn-outline-dark">Calculate</button>
+                                </div>
+                            </div>
+                            <div class="display">
+                                Answer:
+                                <div id="result-gpa"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="conversion-calc-info">
+                        <h3>GPA Calculator</h3>
+                        <p>Calculate your college GPA quickly with our easy to use College GPA Calculator. Follow our
+                            step-by-step
+                            instructions and calculate your GPA in just minutes.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="height-calculator" class="calc-visibility">
+                <div class="calc">
+                    <div class="calc-main">
+                        <div class="cont">
+                            <div class="inputs">
+                                <label for="height">Enter Height:</label>
+                                <input type="number" id="heightInput" class="input-bar" step="any"
+                                    placeholder="Enter height" required>
+                                <select id="unitFrom-height">
+                                    <option value="cm">Centimeters</option>
+                                    <option value="inches">Inches</option>
+                                    <option value="m">meters</option>
+                                    <option value="ft">Feet</option>
+                                </select>
+                                <label for="unitTo">Convert to:</label>
+                                <select id="unitTo-height">
+                                    <option value="inches">Inches</option>
+                                    <option value="cm">Centimeters</option>
+                                    <option value="m">meters</option>
+                                    <option value="ft">Feet</option>
+                                </select>
+
+                                <div class="buttons">
+                                    <button id="reset-height" class="btn btn-outline-dark">Reset</button>
+                                    <button class="btn btn-outline-dark" onclick="convertHeight()">Convert</button>
+                                </div>
+                            </div>
+                            <div class="display">
+                                Answer:
+                                <div id="result-height"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="conversion-calc-info">
+                        <h3>Height Conversion Calculator</h3>
+                        <p>Height conversion table ; 118cm, 3.87ft, 3ft + 10.46in ; 119cm, 3.90ft, 3ft + 10.85in ;
+                            120cm,
+                            3.94ft,
+                            3ft + 11.24in ; 121cm, 3.97ft, 3ft + 11.64in.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="password-generator-calculator" class="calc-visibility">
+                <div class="calc">
+                    <div class="calc-main">
+                        <div class="cont">
+                            <div class="inputs">
+                                <label for="length">Password Length:</label>
+                                <input type="number" id="length-pass" class="input-bar" min="6" max="20" value="12">
+
+                                <div class="buttons">
+                                    <button id="reset-pass" class="btn btn-outline-dark">Reset</button>
+                                    <button class="btn btn-outline-dark" onclick="generatePass()">Generate</button>
+                                </div>
+                            </div>
+                            <div class="display">
+                                Answer:
+                                <div id="password-pass"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="conversion-calc-info">
+                        <h3>Password Generator Calculator</h3>
+                        <p>Using this password generator you can create a very strong, random password with a simple
+                            click
+                            on
+                            the "Generate Password" button.</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div id="bill-tip-calculator" class="calc-visibility">
+                <div class="calc">
+                    <div class="calc-main">
+                        <div class="cont">
+                            <div class="inputs">
+                                <label for="billAmount">Bill Amount:</label>
+                                <input type="number" id="billAmount-tip" class="input-bar"
+                                    placeholder="Enter bill amount" step="0.01">
+                                <label for="tipPercentage">Tip Percentage:</label>
+                                <select id="tipPercentage-tip">
+                                    <option value="10">10%</option>
+                                    <option value="15">15%</option>
+                                    <option value="20">20%</option>
+                                    <option value="25">25%</option>
+                                </select>
+
+                                <div class="buttons">
+                                    <button id="reset-tip" class="btn btn-outline-dark">Reset</button>
+                                    <button id="calculateBtn-tip" class="btn btn-outline-dark">Calculate</button>
+                                </div>
+                            </div>
+                            <div class="display">
+                                Answer:
+                                <div id="result-tip">
+                                    <p>Total Bill: <span id="totalBill-tip">0.00</span></p>
+                                    <p>Tip Amount: <span id="tipAmount-tip">0.00</span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="conversion-calc-info">
+                        <h3>Bill and Tip Calculator</h3>
+                        <p>This free tip calculator computes tip amounts for various situations. It can also calculate
+                            the
+                            tip
+                            amount split between a given number of people.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <%- include('../partials/footer') %>
+
+</body>
+<script src="conversion_Calculators/Conversionscript.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
+
+</html>

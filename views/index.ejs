@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All-in-1 Calculator</title>
+    <!-- Font & Icon CSS import -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="https://kit.fontawesome.com/5c2baa997c.js" crossorigin="anonymous"></script>
+
+    <!-----css import-->
+    <!-- Bootstrap Font Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+
+    <!-----bootstrap and css import-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/5c2baa997c.js" crossorigin="anonymous"></script>
+
+    <!-- AOS library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- <div id="loader-cont">
+        <div class="loader">
+            <i class="fa-solid fa-plus loader-icon"></i>
+            <i class="fa-solid fa-minus loader-icon"></i>
+            <i class="fa-solid fa-xmark loader-icon"></i>
+            <i class="fa-solid fa-divide loader-icon"></i>
+        </div>
+    </div> -->
+    
+    <%- include('partials/header') %>
+
+  <!-- top container -->
+  <div class="row justify-content-center align-items-center g-2 intro_sec ">
+    <!-- Information section -->
+    <div class="col-lg-6 col-md-6 col-sm-12 status_grid intro">
+     <p>Introducing the ultimate multifunctional tool for modern-day convenience: the All-in-One Calculator.
+       This remarkable device seamlessly combines an array of specialized calculators to cater to all your mathematical,
+       health-related, financial, and scientific needs. The health calculator assists in tracking your wellness journey by
+       calculating BMI, calorie intake, and even suggesting optimal exercise routines. Financial planning becomes a breeze
+       with advanced features for compound interest, loan repayment, and investment projections. The scientific calculator
+       empowers users with complex mathematical functions, while the conversion calculator effortlessly switches between
+       units, currencies, and measurements. Unleash your inner mathematician with the geometry calculator, designed to 
+       solve intricate geometric problems accurately. With additional math calculators covering diverse areas, 
+       this all-encompassing tool is a true companion for students, professionals, and anyone seeking efficient 
+       solutions across a multitude of disciplines.</p>
+    </div>
+
+
+    <!-- simple Calculator -->
+    <div id="basic-calc" class="col-lg-6 col-md-6 col-sm-12 status_grid cal_body" data-aos="zoom-in-down" data-aos-duration="650">
+      <div class="history-card">
+        <h3 class="card-element">History</h3>
+        <div id="data-block">
+            <p class="card-element data">2+2</p>
+        </div>
+        <i id="del-history" class="fa-solid fa-trash" title="Delete history"></i>
+    </div>
+    
+    <div id="display" class="display">
+        <i id="history" class="fa-solid fa-clock-rotate-left" title="History"></i>
+        <span id="expression"></span>
+        <span id="result"></span>
+    </div>
+
+    <div id="clear" class="button green">C</div>
+
+    <!-- <div id="backspace" class="button green"><i class="fa-solid fa-delete-left"></i></div> -->
+    <div id="backspace" class="button green"><span class="material-symbols-outlined">backspace</span></div>
+
+            <!-- <div id="percent" class="button green"><i class="fa-solid fa-percent"></i></div> -->
+            <div id="percent" class="button green">%</div>
+
+            <!-- <div id="divide" class="button green"><i class="fa-solid fa-divide"></i></div> -->
+            <div id="divide" class="button green">÷</div>
+
+            <div id="seven" class="button light_green">7</div>
+            <div id="eight" class="button light_green">8</div>
+            <div id="nine" class="button light_green">9</div>
+
+            <div id="multiply" class="button green">×</div>
+            <!-- <div id="multiply" class="button green"><i class="fa-solid fa-xmark"></i></div> -->
+
+            <div id="four" class="button light_green">4</div>
+            <div id="five" class="button light_green">5</div>
+            <div id="six" class="button light_green">6</div>
+
+            <div id="minus" class="button green">-</div>
+            <!-- <div id="minus" class="button green"><i class="fa-solid fa-minus"></i></div> -->
+
+            <div id="one" class="button light_green">1</div>
+            <div id="two" class="button light_green">2</div>
+            <div id="three" class="button light_green">3</div>
+
+            <div id="add" class="button green">+</div>
+            <!-- <div id="add" class="button green"><i class="fa-solid fa-plus"></i></div> -->
+
+            <div id="positive_neagtive" class="button green">-/+</div>
+            <div id="zero" class="button light_green">0</div>
+            <div id="dot" class="button green">.</div>
+
+            <div id="equal" class="button equals green">=</div>
+            <!-- <div id="equal" class="button equals"><i class="fa-solid fa-equals"></i></div> -->
+    </div>
+
+  <!-- Show different types of Calculator -->
+  <div class="row justify-content-center align-items-center g-2 display_sec">
+    <!-- Financial Calculator -->
+    <div class="col-lg-3 col-md-6 col-sm-12 nav_link_dis" data-aos="fade-right" data-aos-delay="100">
+      <img class="display_img" src="images/finance.png" alt="finance">
+      <div class="display_text">
+        <a class="nav_link_dis" href="/simple-interest">Financial Calculator</a>
+      </div>  
+    </div>
+    <!-- Fitness & Health Calculators -->
+    <div class="col-lg-3 col-md-6 col-sm-12" data-aos="fade-right" data-aos-delay="200">
+      <img class="display_img" src="images/health.png" alt="health">
+      <div class="display_text">
+        <a class="nav_link_dis" href="/health-calculator">Fitness & Health Calculators</a>
+      </div>
+    </div>
+    <!-- Math Calculator -->
+    <div class="col-lg-3 col-md-6 col-sm-12" data-aos="fade-right" data-aos-delay="300">
+      <img class="display_img" src="images/math.png" alt="math">
+      <div class="display_text">
+        <a class="nav_link_dis" href="/math-and-algebra">Math Calculator</a>
+      </div>
+    </div>
+    <!-- Other Calculator -->
+    <div class="col-lg-3 col-md-6 col-sm-12" data-aos="fade-right" data-aos-delay="400">
+      <img class="display_img" src="images/coversion.png" alt="coversion">
+      <div class="display_text">
+        <a class="nav_link_dis" href="/conversion-calculator">Conversion Calculator</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+<%- include('partials/footer') %>
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+</html>

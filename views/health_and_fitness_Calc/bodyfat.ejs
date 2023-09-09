@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Calculator</title>
+    <!-- Bootstrap Font Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+
+    <!-----bootstrap and css import-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/5c2baa997c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/health-and-fitness-calculator/health.css">
+
+
+<body>
+    <%- include('../partials/header') %>
+    <%- include('../partials/health-calc-list') %>
+
+  <!--Body Fat Calculator-->
+   <div class="row justify-content-center align-items-center g-2 status_grid">
+    <h2 class="heading"><span>B</span>ody <span>F</span>at</h2>
+
+    <div class="col-lg-4 col-md-6 col-sm-12 status_grid">
+        <h3>What is Body Fat ?</h3>
+        <p>The scientific term for body fat is "adipose tissue." Adipose tissue serves a number of important functions. Its primary purpose is to store lipids from which the body creates energy. In addition, it secretes a number of important hormones, and provides the body with some cushioning as well as insulation.
+
+            Body fat includes essential body fat and storage body fat. Essential body fat is a base level of fat that is found in most parts of the body. It is necessary fat that maintains life and reproductive functions. The amount of essential fat differs between men and women, and is typically around 2-5% in men, and 10-13% in women. The healthy range of body fat for men is typically defined as 8-19%, while the healthy range for women is 21-33%. While having excess body fat can have many detrimental effects on a person's health, insufficient body fat can have negative health effects of its own, and maintaining a body fat percentage below, or even at the essential body fat percentage range is a topic that should be discussed with a medical professional.
+            
+            </p>
+             <a href="https://en.wikipedia.org/wiki/Body_fat_percentage">Read More.....</a>
+       </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-12 status_grid">
+    <h3 class="center">Calculator</h3>
+    <form class="center">
+        <div class="row-lg-3 row-md-4 row-sm-6"> 
+            <label class="form-label" for="gender">Gender:</label>
+            <select class="center" id="gender">
+                <option class="center" value="male">Male</option>
+                <option class="center" value="female">Female</option>
+            </select>
+        </div>
+      
+        <div class="row-lg-3 row-md-4 row-sm-6">
+            <label class="form-label"  for="age">Age:&nbsp &nbsp &nbsp</label>
+            <input type="number" id="age" min="0">
+         </div>
+       
+        <div class="row-lg-3 row-md-4 row-sm-6">
+            <label class="form-label"  for="weight">Weight:</label>
+            <input type="number" id="weight" min="1" placeholder="In Kgs">    
+        </div>
+
+        <div class="row-lg-3 row-md-4 row-sm-6"> 
+            <label class="form-label"  for="height">Height:</label>
+            <input type="number" id="height" min="40" placeholder="In cm">
+        </div>
+
+        <div class="row-lg-3 row-md-4 row-sm-6"> 
+            <label class="form-label"  for="height">Neck:&nbsp&nbsp</label>
+            <input type="number" id="neck" min="10" placeholder="In cm">
+        </div>
+
+        <div class="row-lg-3 row-md-4 row-sm-6"> 
+            <label class="form-label"  for="height">Waist:&nbsp</label>
+            <input type="number" id="waist" min="20" placeholder="In cm">
+        </div>
+
+        <div class="row-lg-3 row-md-4 row-sm-6">
+            <button class="btn btn-primary cal_btn" type="button" id="calculateButton">Calculate Body Fat</button>    
+        </div>
+
+    </form>
+   </div>
+
+   <div class="col-lg-3 col-md-4 col-sm-6 center status_grid status_margin">
+    <!-- <h3 class="center">Results</h3> -->
+    <div>
+    <label class="form-label " for="bodyfat" ><strong>Body Fat:</strong></label>
+        <input class="center" id ="bodyfat" type="number" disabled name="bodyfat" placeholder="">
+        <div>
+        <img id="status_img" class="img_status" src="images/bodyfat.png" alt="BMI Status" width="360px" length="360px">
+        </div>
+        <h4 id="status" class="center status">Body Fat Status</h4>
+    </div>
+    <!-- <ul>
+        <li>Healthy BMI range: 18.5 kg/m2 - 25 kg/m2</li>
+    </ul> -->
+   </div>
+
+   </div>
+
+   <%- include('../partials/footer') %>
+
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+   <script src="health-and-fitness-calculator/bodyfat.js" charset="UTF-8"></script>
+</body>
+</html>

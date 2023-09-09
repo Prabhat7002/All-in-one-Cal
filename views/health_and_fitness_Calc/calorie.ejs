@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health and Fitness Calculator</title>
+    <!-- Bootstrap Font Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+
+    <!-----bootstrap and css import-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/5c2baa997c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/health-and-fitness-calculator/health.css">
+
+
+<body>
+    <%- include('../partials/header') %>
+
+    <%- include('../partials/health-calc-list') %>
+
+  <!--Calorie Calculator-->
+   <div class="row justify-content-center align-items-center g-2 status_grid">
+    <h2 class="heading"><span>M</span>aintenance <span>C</span>alorie</h2>
+
+    <div class="col-lg-4 col-md-6 col-sm-12 status_grid">
+        <h3>What is Calorie ?</h3>
+        <p>This Calorie Calculator is based on several equations, and the results of the calculator are based on an estimated average. The Harris-Benedict Equation was one of the earliest equations used to calculate basal metabolic rate (BMR), which is the amount of energy expended per day at rest. It was revised in 1984 to be more accurate and was used up until 1990, when the Mifflin-St Jeor Equation was introduced. The Mifflin-St Jeor Equation also calculates BMR, and has been shown to be more accurate than the revised Harris-Benedict Equation. The Katch-McArdle Formula is slightly different in that it calculates resting daily energy expenditure (RDEE), which takes lean body mass into account, something that neither the Mifflin-St Jeor nor the Harris-Benedict Equation do. Of these equations, the Mifflin-St Jeor Equation is considered the most accurate equation for calculating BMR with the exception that the Katch-McArdle Formula can be more accurate for people who are leaner and know their body fat percentage. </p>
+             <a href="https://en.wikipedia.org/wiki/Calorie">Read More.....</a>
+       </div>
+
+       <div class="col-lg-4 col-md-6 col-sm-12 status_grid">
+        <h3 class="center">Calculator</h3>
+        <form class="center">
+                      
+            <div class="row-lg-3 row-md-4 row-sm-6">
+                <label class="form-label"  for="age">Age: &nbsp; &nbsp; </label>
+                <input type="number" id="age" min="0">
+             </div>
+           
+            <div class="row-lg-3 row-md-4 row-sm-6">
+                <label class="form-label"  for="weight">Weight:</label>
+                <input type="number" id="weight" min="1" placeholder="In Kg">    
+            </div>
+
+            <div class="row-lg-3 row-md-4 row-sm-6"> 
+                <label class="form-label"  for="height">Height:</label>
+                <input type="number" id="height" min="40" placeholder="In cm">
+            </div>
+
+            <div class="row-lg-3 row-md-4 row-sm-6"> 
+                <label class="form-label" for="gender">Gender: &nbsp; &nbsp; </label>
+                <select id="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+
+            <div class="row-lg-3 row-md-4 row-sm-6">
+                <label class="form-label"  for="activityLevel">Activity Level:</label>
+                <select id="activityLevel">
+                    <option value="sedentary">Sedentary (little to no exercise)</option>
+                    <option value="lightlyActive">Lightly Active </option>
+                    <option value="moderatelyActive">Moderately Active </option>
+                    <option value="veryActive">Very Active </option>
+                    <option value="superActive">Super Active </option>
+                </select>
+             </div>
+
+            <div class="row-lg-3 row-md-4 row-sm-6">
+                <button class="btn btn-primary cal_btn" type="button" id="calculateButton">Calculate Calories</button>    
+            </div>
+            
+        </form>
+       </div>
+
+   <div class="col-lg-3 col-md-4 col-sm-6 center status_grid status_margin">
+    <!-- <h3 class="center">Results</h3> -->
+    <div>
+    <label class="form-label " for="calorieResult" ><strong>Maintenance Calorie:</strong></label>
+        <input class="center" id ="calorieResult" type="number" disabled name="calorieResult" placeholder="">
+        <div>
+        <!-- <img id="status_img" class="img_status" src="images/calorie.jpg" alt="Calorie" width="360px" length="360px"> -->
+        </div>
+        
+    </div>
+   </div>
+
+   </div>
+
+   <%- include('../partials/footer') %>
+
+
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+   <script src="health-and-fitness-calculator/calorie.js" charset="UTF-8"></script>
+</body>
+</html>

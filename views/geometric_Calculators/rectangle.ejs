@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All-in-1 Calculator</title>
+    <!-- Bootstrap Font Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+
+    <!-----bootstrap and css import-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/5c2baa997c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="geometric-calculators/geometric.css">
+
+</head>
+
+<body>
+    
+    <%- include('../partials/header') %>
+    <%- include('../partials/gemoetry-calc-list') %>
+
+
+
+<!------------------------- Rectangle calculator --------------------------->
+
+<div id="Rectangle" class="calc">
+    <h3>Rectangle Calculator</h3>
+    <div class="cont">
+        <div class="inputs">
+            <label for="given_data_rect">Choose a calculation:</label>
+            <br>
+            <select id="given_data_rect" class="input-bar" onchange="setInputRect()">
+                <option value="ab" selected>Find A, P, p | Given a, b</option>
+                <option value="Aa">Find P, p, b | Given A, a</option>
+                <option value="Ab">Find P, p, a | Given A, b</option>
+                <option value="Pa">Find A, p, b | Given P, a</option>
+                <option value="Pb">Find A, p, a | Given P, b</option>
+                <option value="pa">Find A, P, b | Given p, a</option>
+                <option value="pb">Find A, P, a | Given p, b</option>
+                
+            </select>
+
+
+            <div id="input-for-ab">
+                <label for="a">side length a = </label>
+                <input name="a" class="input-bar side-a-rect" type="text" title="positive real number"
+                    placeholder="Length of side a" />
+                <br>
+                <label for="b">side length b = </label>
+                <input name="b" class="input-bar side-b-rect" type="text" title="positive real number"
+                    placeholder="Length of side b" />
+            </div>
+
+            <div id="input-for-Aa">
+                <label for="a">side length a = </label>
+                <input name="a" class="input-bar side-a-rect" type="text" title="positive real number"
+                    placeholder="Length of side a" />
+                <br>
+                <label for="b">Area A = </label>
+                <input name="b" class="input-bar area-rect" type="text" title="positive real number"
+                    placeholder="Enter area" />
+            </div>
+
+            <div id="input-for-Ab">
+                <label for="b">side length b = </label>
+                <input name="b" class="input-bar side-b-rect" type="text" title="positive real number"
+                    placeholder="Length of side b" />
+                <br>
+                <label for="A">Area A = </label>
+                <input name="A" class="input-bar area-rect" type="text" title="positive real number"
+                    placeholder="Enter area" />
+            </div>
+
+            <div id="input-for-Pa">
+                <label for="a">side length a = </label>
+                <input name="a" class="input-bar side-a-rect" type="text" title="positive real number"
+                    placeholder="Length of side a" />
+                <br>
+                <label for="P">Perimeter P= </label>
+                <input name="P" class="input-bar perimeter-rect" type="text" title="positive real number"
+                    placeholder="Enter Perimeter" />
+            </div>
+
+            <div id="input-for-Pb">
+                <label for="b">side length b = </label>
+                <input name="b" class="input-bar side-b-rect" type="text" title="positive real number"
+                    placeholder="Length of side b" />
+                <br>
+                <label for="P">Perimeter P= </label>
+                <input name="P" class="input-bar perimeter-rect" type="text" title="positive real number"
+                    placeholder="Enter Perimeter" />
+            </div>
+
+            <div id="input-for-pa">
+                <label for="a">side length a = </label>
+                <input name="a" class="input-bar side-a-rect" type="text" title="positive real number"
+                    placeholder="Length of side a" />
+                <br>
+                <label for="p">diagonal p = q = </label>
+                <input name="p" class="input-bar diagonal-rect" type="text" title="positive real number"
+                    placeholder="Enter diagonal" />
+            </div>
+
+            <div id="input-for-pb">
+                <label for="b">side length b = </label>
+                <input name="b" class="input-bar side-b-rect" type="text" title="positive real number"
+                    placeholder="Length of side a" />
+                <br>
+                <label for="p">diagonal p = q = </label>
+                <input name="p" class="input-bar diagonal-rect" type="text" title="positive real number"
+                    placeholder="Enter diagonal" />
+            </div>
+
+
+            <div class="input-for-units-rect">
+                <label for="units_length">Units</label>
+                <select name="units" id="unitsRect">
+                    <option value="km">km</option>
+                    <option value="m" selected>m</option>
+                    <option value="cm">cm</option>
+                    <option value="mm">mm</option>
+                    <option value="mi">mi</option>
+                    <option value="yd">yd</option>
+                    <option value="ft">ft</option>
+                    <option value="in">in</option>
+                </select>
+
+                <div class="buttons">
+                    <button id="resetRect" class="btn btn-outline-dark">Reset</button>
+                    <button id="submitRect" class="btn btn-outline-dark">Calculate</button>
+                </div>
+
+            </div>
+        </div>
+        <div class="display">
+            Answer:
+            <div id="answerRect"></div>
+        </div>
+    </div>
+</div>
+
+
+<%- include('../partials/footer') %>
+
+</body>
+<script src="main.js"></script>
+<script src="geometric-calculators/rectangle.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
+
+</html>

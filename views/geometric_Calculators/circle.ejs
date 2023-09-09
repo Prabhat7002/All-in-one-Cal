@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All-in-1 Calculator</title>
+    <!-- Bootstrap Font Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+
+    <!-----bootstrap and css import-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/5c2baa997c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="geometric-calculators/geometric.css">
+    
+
+</head>
+
+<body>
+    <%- include('../partials/header') %>
+    <%- include('../partials/gemoetry-calc-list') %>
+
+
+    
+    
+    
+    <!------------------------- Circle ------------------------->
+<div id="Circle" class="calc">
+    <h3>Circle Calculator</h3>
+    <div class="cont">
+        <div class="inputs">
+            <label for="given_data">Choose a calculation:</label>
+            <br>
+            <select id="given_data_circle" class="input-bar" onchange="setInCircle()">
+                <option value="r" selected>Find A, C, d | Given r</option>
+                <option value="A">Find r, C, d | Given A</option>
+                <option value="C">Find r, A, d | Given C</option>
+                <option value="d">Find r, A, C | Given d</option>
+            </select>
+
+
+            <div id="in-for-r-circle">
+                <label for="r">radius r = </label>
+                <input name="circleInput" value="3" class="input-bar circleInput" type="text"
+                    title="positive real number" placeholder="input radius" />
+            </div>
+
+            <div id="in-for-A-circle">
+                <label for="A">area A = </label>
+                <input name="circleInput" value="24" class="input-bar circleInput" type="text"
+                    title="positive real number" placeholder="input Area" />
+            </div>
+
+            <div id="in-for-C-circle">
+                <label for="C">circumference C = </label>
+                <input name="circleInput" value="12" class="input-bar circleInput" type="text"
+                    title="positive real number" placeholder="input circumference" />
+            </div>
+
+            <div id="in-for-d-circle">
+                <label for="d">diameter d = </label>
+                <input name="circleInput" value="9" class="input-bar circleInput" type="text"
+                    title="positive real number" placeholder="input diameter" />
+            </div>
+
+
+            <div class="input-for-units">
+                <label for="units_length">Units</label>
+                <select name="units" id="circleUnits">
+                    <option value="km">km</option>
+                    <option value="m" selected>m</option>
+                    <option value="cm">cm</option>
+                    <option value="mm">mm</option>
+                    <option value="mi">mi</option>
+                    <option value="yd">yd</option>
+                    <option value="ft">ft</option>
+                    <option value="in">in</option>
+                </select>
+
+                <div class="buttons">
+                    <button id="resetCircle" class="btn btn-outline-dark">Reset</button>
+                    <button id="submitCircle" class="btn btn-outline-dark">Calculate</button>
+                </div>
+
+            </div>
+        </div>
+        <div class="display">
+            Answer:
+            <div id="answerCircle"></div>
+        </div>
+    </div>
+</div>
+
+
+<%- include('../partials/footer') %>
+
+</body>
+<script src="main.js"></script>
+<script src="geometric-calculators/circle.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
+    crossorigin="anonymous"></script>
+
+</html>

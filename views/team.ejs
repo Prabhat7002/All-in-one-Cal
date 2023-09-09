@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All-in-1 Calculator</title>
+    <!-- Font & Icon CSS import -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="https://kit.fontawesome.com/5c2baa997c.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap Font Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+
+    <!-----bootstrap and css import-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/5c2baa997c.js" crossorigin="anonymous"></script>
+
+    <!-- AOS library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="teamStyles.css">
+</head>
+
+<body>
+    <%- include('partials/header') %>
+
+
+<!-- ======= Team Section ======= -->
+<section id="team">
+    <div class="container">
+        <div class="section-header">
+            <h3 class="section-title">Team Members</h3>
+            <p class="section-description">Team of professionals providing collaborative partner experience
+                dedicated to your success.</p>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="member" data-aos="fade-right" data-aos-delay="100">
+                    <div class="pic"><img src="images/krishna.jpeg" alt=""></div>
+                    <h4>Krishna Mahato</h4>
+                    <span>Full Stack Developer (TL)</span>
+                    <div class="social">
+                        <a href=""><i class="bi bi-twitter"></i></a>
+                        <a href=""><i class="bi bi-facebook"></i></a>
+                        <a href=""><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/krmahato/"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="member" data-aos="fade-right" data-aos-delay="250">
+                    <div class="pic"><img src="images/prasad.jpeg" alt=""></div>
+                    <h4>Prasad</h4>
+                    <span>Frontend Developer</span>
+                    <div class="social">
+                        <a href=""><i class="bi bi-twitter"></i></a>
+                        <a href=""><i class="bi bi-facebook"></i></a>
+                        <a href=""><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/prasad-sawant-556456269"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="member" data-aos="fade-right" data-aos-delay="400">
+                    <div class="pic"><img src="images/prabhatimg.jpg" alt=""></div>
+                    <h4>Prabhat Kumar Sharma</h4>
+                    <span>Frontend Developer</span>
+                    <div class="social">
+                        <a href=""><i class="bi bi-twitter"></i></a>
+                        <a href=""><i class="bi bi-facebook"></i></a>
+                        <a href=""><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/prabhat-s-560a98126/"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6">
+                <div class="member" data-aos="fade-right" data-aos-delay="500">
+                    <div class="pic"><img src="images/sandesh_img.jpg" alt=""></div>
+                    <h4>Sandesh More</h4>
+                    <span>Full Stack Developer</span>
+                    <div class="social">
+                        <a href=""><i class="bi bi-twitter"></i></a>
+                        <a href=""><i class="bi bi-facebook"></i></a>
+                        <a href=""><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.linkedin.com/in/sandesh-more-453076232"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section><!-- End Team Section -->
+
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+
+</body>
+
+    <%- include('partials/footer') %>
+
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Calculator</title>
+    <!-- Bootstrap Font Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
+
+    <!-----bootstrap and css import-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/5c2baa997c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/health-and-fitness-calculator/health.css">
+<header>
+
+</header>
+<body>
+    <%- include('../partials/header') %>
+    <%- include('../partials/health-calc-list') %>
+  <!--BMR Calculator-->
+   <div class="row justify-content-center align-items-center g-2 status_grid ">
+    <h2 class="heading"><span>B</span>asal <span>M</span>etabolic <span>R</span>ate</h2>
+
+    <div class="col-lg-4 col-md-6 col-sm-12 status_grid">
+        <h3>What is BMR ?</h3>
+        <p>The Basal Metabolic Rate (BMR) Calculator estimates your basal metabolic rate—the amount of 
+            energy expended while at rest in a neutrally temperate environment, and in a post-absorptive state 
+            (meaning that the digestive system is inactive, which requires about 12 hours of fasting).
+        </p>
+        <p>The basal metabolic rate (BMR) is the amount of energy needed while resting in a temperate environment 
+            when the digestive system is inactive. It is the equivalent of figuring out how much gas an idle car 
+            consumes while parked. In such a state, energy will be used only to maintain vital organs, which include 
+            the heart, brain, kidneys, nervous system, intestines, liver, lungs, sex organs, muscles, and skin. 
+            For most people, upwards of ~70% of total energy (calories) burned each day is due to upkeep. 
+            Physical activity makes up ~20% of expenditure and ~10% is used for the digestion of food, also known as thermogenesis.</p>
+             <a href="https://en.wikipedia.org/wiki/Basal_metabolic_rate">Read More.....</a>
+       </div>
+
+    <div class="col-lg-4 col-md-6 col-sm-12 status_grid">
+    <h3 class="center">Calculator</h3>
+    <form class="center">
+        <div class="row justify-content-center align-items-center g-2 ">
+            <div class="row-lg-3 row-md-4 row-sm-6"> 
+                <label class="form-label" for="age" >Age:</label>
+                <input  id ="age" type="text" name="age" placeholder="Enter Age">
+            </div>
+            <div class="row-lg-3 row-md-4 row-sm-6">
+                <label class="form-label" for="height" >Height:</label>
+                <input  id ="height" type="text" name="height" placeholder="Enter Height(in cms)">
+            </div> 
+            <div class="row-lg-3 row-md-4 row-sm-6">
+                <label for="height" class="form-label">Weight:</label>
+                <input id="weight" type="text" name="weight" placeholder="Enter Weight(in kg)">
+            </div>
+            <div class="row-lg-3 row-md-4 row-sm-6"> 
+                <label class="form-label" for="gender">Gender:</label>
+                <select id="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+            <div class="row-lg-3 row-md-4 row-sm-6 cal_btn">
+                <button id="submit" class="btn btn-primary" type="submit" name="submit">Calculate BMR</button>
+            </div>
+
+        </div>
+    </form>
+   </div>
+
+   <div class="col-lg-3 col-md-4 col-sm-6 center status_grid status_margin">
+    <div>
+    <label class="form-label " for="bmr_res" ><strong>BMR:</strong></label>
+        <input class="center" id ="bmr_res" type="number" readonly name="bmr_res" placeholder="">
+        <div>
+        <img id="status_img" class="img_status" src="images/bmr.jpg" alt="BMR Status" width="360px" length="360px">
+        </div>
+        <!-- <h4 id="status" class="center status">BMR Status</h4> -->
+    </div>
+   </div>
+   </div>
+
+   <%- include('../partials/footer') %>
+
+
+   <script src="health-and-fitness-calculator/bmr.js" charset="UTF-8"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+   
+</body>
+</html>
